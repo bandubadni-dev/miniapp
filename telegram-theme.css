@@ -1,0 +1,380 @@
+/* Telegram Mini App Theme Support */
+:root {
+    --tg-theme-bg-color: #ffffff;
+    --tg-theme-text-color: #000000;
+    --tg-theme-hint-color: #999999;
+    --tg-theme-link-color: #2481cc;
+    --tg-theme-button-color: #2481cc;
+    --tg-theme-button-text-color: #ffffff;
+    --tg-theme-secondary-bg-color: #f1f1f1;
+    --tg-theme-header-bg-color: #ffffff;
+    --tg-theme-accent-text-color: #2481cc;
+    --tg-theme-section-bg-color: #ffffff;
+    --tg-theme-section-header-text-color: #6d6d71;
+    --tg-theme-subtitle-text-color: #999999;
+    --tg-theme-destructive-text-color: #ff3b30;
+}
+
+/* Apply Telegram theme colors */
+body {
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-text-color);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header styling */
+.header {
+    background-color: var(--tg-theme-header-bg-color);
+    color: var(--tg-theme-text-color);
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--tg-theme-hint-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Button styling */
+.btn, button {
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.btn:hover, button:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+.btn:active, button:active {
+    transform: translateY(0);
+    opacity: 0.6;
+}
+
+.btn-secondary {
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-text-color);
+}
+
+.btn-destructive {
+    background-color: var(--tg-theme-destructive-text-color);
+    color: white;
+}
+
+/* Card styling */
+.card {
+    background-color: var(--tg-theme-section-bg-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 8px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--tg-theme-hint-color);
+}
+
+/* Level selection styling */
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 12px;
+    padding: 16px;
+}
+
+.level-btn {
+    aspect-ratio: 1;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    min-height: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.level-btn.completed {
+    background-color: var(--tg-theme-accent-text-color);
+    color: white;
+}
+
+.level-btn.locked {
+    background-color: var(--tg-theme-hint-color);
+    color: var(--tg-theme-secondary-bg-color);
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* Game grid styling */
+.crossword-grid {
+    display: grid;
+    gap: 2px;
+    background-color: var(--tg-theme-hint-color);
+    padding: 8px;
+    border-radius: 8px;
+    margin: 16px auto;
+    max-width: 100%;
+    overflow: auto;
+}
+
+.grid-cell {
+    background-color: var(--tg-theme-section-bg-color);
+    border: 1px solid var(--tg-theme-hint-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--tg-theme-text-color);
+    min-height: 40px;
+    min-width: 40px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.grid-cell.active {
+    background-color: var(--tg-theme-bg-color);
+}
+
+.grid-cell.selected {
+    background-color: var(--tg-theme-accent-text-color);
+    color: white;
+}
+
+.grid-cell.highlighted {
+    background-color: var(--tg-theme-button-color);
+    color: white;
+    opacity: 0.7;
+}
+
+.grid-cell.correct {
+    background-color: #34c759;
+    color: white;
+}
+
+.grid-cell.incorrect {
+    background-color: var(--tg-theme-destructive-text-color);
+    color: white;
+}
+
+/* Clues styling */
+.clues-container {
+    background-color: var(--tg-theme-section-bg-color);
+    border-radius: 12px;
+    margin: 16px 0;
+    overflow: hidden;
+}
+
+.clues-header {
+    background-color: var(--tg-theme-secondary-bg-color);
+    color: var(--tg-theme-section-header-text-color);
+    padding: 12px 16px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.clue-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--tg-theme-hint-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.clue-item:last-child {
+    border-bottom: none;
+}
+
+.clue-item:hover {
+    background-color: var(--tg-theme-secondary-bg-color);
+}
+
+.clue-item.selected {
+    background-color: var(--tg-theme-accent-text-color);
+    color: white;
+}
+
+.clue-item.completed {
+    background-color: #34c759;
+    color: white;
+    opacity: 0.8;
+}
+
+/* Game stats styling */
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--tg-theme-section-bg-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--tg-theme-accent-text-color);
+    display: block;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--tg-theme-subtitle-text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* Progress bar */
+.progress-bar {
+    background-color: var(--tg-theme-secondary-bg-color);
+    border-radius: 8px;
+    height: 8px;
+    overflow: hidden;
+    margin: 16px 0;
+}
+
+.progress-fill {
+    background-color: var(--tg-theme-accent-text-color);
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 8px;
+}
+
+/* Input styling */
+input[type="text"], textarea {
+    background-color: var(--tg-theme-section-bg-color);
+    color: var(--tg-theme-text-color);
+    border: 1px solid var(--tg-theme-hint-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, textarea:focus {
+    outline: none;
+    border-color: var(--tg-theme-accent-text-color);
+    box-shadow: 0 0 0 2px rgba(36, 129, 204, 0.2);
+}
+
+/* Message styling */
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: rgba(52, 199, 89, 0.1);
+    color: #34c759;
+    border: 1px solid rgba(52, 199, 89, 0.3);
+}
+
+.message.error {
+    background-color: rgba(255, 59, 48, 0.1);
+    color: var(--tg-theme-destructive-text-color);
+    border: 1px solid rgba(255, 59, 48, 0.3);
+}
+
+.message.info {
+    background-color: rgba(36, 129, 204, 0.1);
+    color: var(--tg-theme-accent-text-color);
+    border: 1px solid rgba(36, 129, 204, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .level-grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        padding: 12px;
+    }
+    
+    .level-btn {
+        min-height: 50px;
+        font-size: 16px;
+    }
+    
+    .grid-cell {
+        min-height: 35px;
+        min-width: 35px;
+        font-size: 14px;
+    }
+    
+    .game-stats {
+        padding: 12px;
+    }
+    
+    .stat-value {
+        font-size: 20px;
+    }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --tg-theme-bg-color: #1c1c1e;
+        --tg-theme-text-color: #ffffff;
+        --tg-theme-hint-color: #48484a;
+        --tg-theme-secondary-bg-color: #2c2c2e;
+        --tg-theme-header-bg-color: #1c1c1e;
+        --tg-theme-section-bg-color: #2c2c2e;
+        --tg-theme-section-header-text-color: #8e8e93;
+        --tg-theme-subtitle-text-color: #8e8e93;
+    }
+}
+
+/* Animation utilities */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.bounce {
+    animation: bounce 0.5s ease;
+}
+
+@keyframes bounce {
+    0%, 20%, 60%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    80% { transform: translateY(-5px); }
+}
+
+/* Loading spinner */
+.loading-spinner {
+    border: 3px solid var(--tg-theme-hint-color);
+    border-top: 3px solid var(--tg-theme-accent-text-color);
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "Teka-Teki Silang KBBI",
+  "short_name": "TTS KBBI",
+  "description": "Game teka-teki silang berbasis KBBI dengan 100 level menantang",
+  "version": "1.0.0",
+  "start_url": "start.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#6366f1",
+  "background_color": "#f9fafb",
+  "scope": "/",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "telegram": {
+    "bot_username": "tts_kbbi_bot",
+    "web_app_url": "https://your-domain.com/start.html",
+    "supports_inline_mode": false,
+    "supports_settings_button": true
+  },
+  "features": {
+    "cloud_storage": true,
+    "haptic_feedback": true,
+    "main_button": true,
+    "back_button": true,
+    "settings_button": true
+  }
+}
