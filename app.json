@@ -23,7 +23,7 @@
   ],
   "telegram": {
     "bot_username": "tts_kbbi_bot",
-    "web_app_url": "https://your-domain.com/start.html",
+    "web_app_url": "https://miniapp-six-lime.vercel.app/start.html",
     "supports_inline_mode": false,
     "supports_settings_button": true
   },
