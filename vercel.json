@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "webhook.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/webhook.js"
+    }
+  ],
+  "env": {
+    "BOT_TOKEN": "@bot_token",
+    "MINI_APP_URL": "https://miniapp-six-lime.vercel.app/start.html",
+    "WEBHOOK_URL": "@webhook_url"
+  },
+  "functions": {
+    "webhook.js": {
+      "maxDuration": 10
+    }
+  }
+}

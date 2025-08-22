@@ -1,0 +1,44 @@
+{
+  "name": "kbbi-crossword-telegram-bot",
+  "version": "1.0.0",
+  "description": "Telegram Bot untuk KBBI Crossword Mini App - Bot yang mengintegrasikan game teka-teki silang dengan Telegram Mini App",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "webhook": "node webhook.js",
+    "dev": "nodemon bot.js",
+    "dev:webhook": "nodemon webhook.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "mini-app",
+    "crossword",
+    "kbbi",
+    "game",
+    "puzzle",
+    "indonesia"
+  ],
+  "author": "KBBI Crossword Team",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/kbbi-crossword-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/kbbi-crossword-bot/issues"
+  },
+  "homepage": "https://github.com/your-username/kbbi-crossword-bot#readme"
+}
